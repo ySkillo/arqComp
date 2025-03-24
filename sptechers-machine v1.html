@@ -18,9 +18,9 @@
             <span><h1 id="h1_titulo">DECIMAL</h1><img src="01.png" alt=""></span>
             <div id="div_inputs_box">
                 <label for="demo1">Digite um número decimal</label>
-                <div>
+                <div id="button_check">
                     <input type="number" id="demo1">
-                    <button id="btn_enviar" onclick="converter()">></button>
+                    <button id="btn_enviar" onclick="converterDecimal()">></button>
                 </div>
                 <label for="demo2">Octal</label>
                 <div type="text" id="demo2" class="input"></div>
@@ -66,12 +66,30 @@
     var letraB = "#2839F4"
     var letraC = "#FF1818"
 
-     function converter() {
+     function converterDecimal() {
          var decimal = Number(demo1.value);
          console.log("click feito")
 
          demo2.innerHTML = decimal.toString(8);
          demo3.innerHTML = decimal.toString(16);
+         demo4.innerHTML = decimal.toString(2);
+     }
+
+     function converterOctal() {
+         var decimal = Number(demo1.value);
+         var octal = demo1.value;
+         var decimal = parseInt(octal, 8);
+         demo2.innerHTML = decimal;
+         demo3.innerHTML = decimal.toString(16);
+         demo4.innerHTML = decimal.toString(2);
+     }
+
+     function converterHexadecimal() {
+         var hexadecimal = demo1.value;
+         var decimal = parseInt(hexadecimal, 16);
+
+         demo2.innerHTML = decimal.toString(8);
+         demo3.innerHTML = decimal;
          demo4.innerHTML = decimal.toString(2);
      }
 
@@ -86,16 +104,23 @@
         just_do_it.style.color = letraA;
         btn_sessao1.style.backgroundImage = 'url("04.png")';
         btn_sessao1.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterDecimal()">></button>`
 
 
         h1_titulo.innerHTML = "DECIMAL"
         btn_enviar.style.backgroundColor = "#111111"
         btn_enviar.style.borderColor = "#232323"
         btn_enviar.style.color = "#fff"
+
         demo1.style.background = "#232323"
         demo2.style.background = "#232323"
         demo3.style.background = "#232323"
         demo4.style.background = "#232323"
+
+        demo1.style.color = "#fff"
+        demo2.style.color = "#fff"
+        demo3.style.color = "#fff"
+        demo4.style.color = "#fff"
 
         div_img.innerHTML = `<img src="Group 1.png" alt="">`
      }
@@ -112,6 +137,7 @@
         just_do_it.style.color = letraB;
         btn_sessao2.style.backgroundImage = 'url("03.png")';
         btn_sessao2.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="text" id="demo1"><button id="btn_enviar" onclick="converterHexadecimal()">></button>`
 
         h1_titulo.innerHTML = "HEXADECIMAL"
         btn_enviar.style.backgroundColor = "#0059FF"
@@ -121,6 +147,11 @@
         demo2.style.background = "#fff"
         demo3.style.background = "#fff"
         demo4.style.background = "#fff"
+
+        demo1.style.color = "#000"
+        demo2.style.color = "#000"
+        demo3.style.color = "#000"
+        demo4.style.color = "#000"
 
 
         div_img.innerHTML = `<img src="Group 2.png" alt="">`
@@ -139,17 +170,27 @@
         just_do_it.style.color = letraC;
         btn_sessao3.style.backgroundImage = 'url("05.png")';
         btn_sessao3.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterOctal()">></button>`
 
         h1_titulo.innerHTML = "OCTAL"
         btn_enviar.style.backgroundColor = "#FF0000"
         btn_enviar.style.borderColor = "#fff"
         btn_enviar.style.color = "#fff"
+
         demo1.style.background = "#fff"
         demo2.style.background = "#fff"
         demo3.style.background = "#fff"
         demo4.style.background = "#fff"
 
+        demo1.style.color = "#000"
+        demo2.style.color = "#000"
+        demo3.style.color = "#000"
+        demo4.style.color = "#000"
+
         div_img.innerHTML = `<img src="Group 3.png" alt="">`
+
+
+        
 
 
 
