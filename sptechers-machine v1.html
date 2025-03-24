@@ -17,14 +17,17 @@
         <div id="div_inputs">
             <h1 id="h1_titulo">DECIMAL</h1>
             <div id="div_inputs_box">
-                <label for="">Digite um número decimal</label>
-                <input type="text">
-                <label for="">Octal</label>
-                <input type="text">
-                <label for="">Hexadecimal</label>
-                <input type="text">
-                <label for="">Binário</label>
-                <input type="text">
+                <label for="demo1">Digite um número decimal</label>
+                <div>
+                    <input type="number" id="demo1">
+                    <button id="btn_enviar" onclick="converter()">></button>
+                </div>
+                <label for="demo2">Octal</label>
+                <div type="text" id="demo2" class="input"></div>
+                <label for="demo3">Hexadecimal</label>
+                <div type="text" id="demo3" class="input"></div>
+                <label for="demo4">Binário</label>
+                <div type="text" id="demo4" class="input"></div>
             </div>
         </div>
     
@@ -33,11 +36,11 @@
         </div>
     
         <div id="nav_bar">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
+            <button id="btn_sessao1" onclick="decimalSessao()"></button>
+            <button id="btn_sessao2" onclick="hexadecimalSessao()"></button>
+            <button id="btn_sessao3" onclick="octalSessao()"></button>
+            <button id="btn_sessao4"></button>
+            <button id="btn_sessao5"></button>
         </div>
 
     </div>
@@ -52,11 +55,105 @@
 
 
 <script>
-    // function converter() {
-    //     var decimal = Number(demo1.value);
+    
+    // fundos
+    var fundoA = "#111111";
+    var fundoB = "#0059FF";
+    var fundoC = "#FF0000";
 
-    //     demo2.innerHTML = decimal.toString(8);
-    //     demo3.innerHTML = decimal.toString(16);
-    //     demo4.innerHTML = decimal.toString(2);
-    // }
+    //letra fundo
+    var letraA = "#131313"
+    var letraB = "#2839F4"
+    var letraC = "#FF1818"
+
+     function converter() {
+         var decimal = Number(demo1.value);
+         console.log("click feito")
+
+         demo2.innerHTML = decimal.toString(8);
+         demo3.innerHTML = decimal.toString(16);
+         demo4.innerHTML = decimal.toString(2);
+     }
+
+     function decimalSessao(){
+        //reset outros btn
+        btn_sessao2.style.backgroundImage = 'url("01.png")';
+        btn_sessao2.style.backgroundColor = "transparent";
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoA;
+        just_do_it.style.color = letraA;
+        btn_sessao1.style.backgroundImage = 'url("04.png")';
+        btn_sessao1.style.backgroundColor = "#fff";
+
+
+        h1_titulo.innerHTML = "DECIMAL"
+        btn_enviar.style.backgroundColor = "#111111"
+        btn_enviar.style.borderColor = "#232323"
+        btn_enviar.style.color = "#fff"
+        demo1.style.background = "#232323"
+        demo2.style.background = "#232323"
+        demo3.style.background = "#232323"
+        demo4.style.background = "#232323"
+
+        div_img.innerHTML = `<img src="Group 1.png" alt="">`
+     }
+
+     function hexadecimalSessao(){
+
+        //reset outros btn
+        btn_sessao1.style.backgroundImage = 'url("01.png")';
+        btn_sessao1.style.backgroundColor = "transparent";
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoB;
+        just_do_it.style.color = letraB;
+        btn_sessao2.style.backgroundImage = 'url("03.png")';
+        btn_sessao2.style.backgroundColor = "#fff";
+
+        h1_titulo.innerHTML = "HEXADECIMAL"
+        btn_enviar.style.backgroundColor = "#0059FF"
+        btn_enviar.style.borderColor = "#fff"
+        btn_enviar.style.color = "#fff"
+        demo1.style.background = "#fff"
+        demo2.style.background = "#fff"
+        demo3.style.background = "#fff"
+        demo4.style.background = "#fff"
+
+
+        div_img.innerHTML = `<img src="Group 2.png" alt="">`
+
+     }
+
+     function octalSessao(){
+
+        //reset outros btn
+        btn_sessao2.style.backgroundImage = 'url("01.png")';
+        btn_sessao2.style.backgroundColor = "transparent";
+        btn_sessao1.style.backgroundImage = 'url("01.png")';
+        btn_sessao1.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoC;
+        just_do_it.style.color = letraC;
+        btn_sessao3.style.backgroundImage = 'url("05.png")';
+        btn_sessao3.style.backgroundColor = "#fff";
+
+        h1_titulo.innerHTML = "OCTAL"
+        btn_enviar.style.backgroundColor = "#FF0000"
+        btn_enviar.style.borderColor = "#fff"
+        btn_enviar.style.color = "#fff"
+        demo1.style.background = "#fff"
+        demo2.style.background = "#fff"
+        demo3.style.background = "#fff"
+        demo4.style.background = "#fff"
+
+        div_img.innerHTML = `<img src="Group 3.png" alt="">`
+
+
+
+
+     }
+
 </script>
