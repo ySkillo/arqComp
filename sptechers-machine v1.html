@@ -7,40 +7,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>SPTecher's Machine</title>
 </head>
 
-<body bgcolor="#00ffff">
-    <center>
-        <h1>SPTecher's Machine</h1>
+<body id="body_color">
+    <h1 id="just_do_it">JUST DO IT</h1>
+    <div id="container">
+        <div id="div_inputs">
+            <h1 id="h1_titulo">DECIMAL</h1>
+            <div id="div_inputs_box">
+                <label for="">Digite um número decimal</label>
+                <input type="text">
+                <label for="">Octal</label>
+                <input type="text">
+                <label for="">Hexadecimal</label>
+                <input type="text">
+                <label for="">Binário</label>
+                <input type="text">
+            </div>
+        </div>
+    
+        <div id="div_img">
+            <img src="Group 1.png" alt="">
+        </div>
+    
+        <div id="nav_bar">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+        </div>
 
-        <h3>Digite um número decimal:</h3>
-        <input id="demo1" type="text" placeholder="Ex: 42">
-        <br><br>
+    </div>
 
-        <button onclick="converter()">Converter</button>
-
-        <h3>Resultados:</h3>
-        <p>Octal:
-        <div id="demo2"></div>
-        </p>
-        <p>Hexadecimal:
-        <div id="demo3"></div>
-        </p>
-        <p>Binário:
-        <div id="demo4"></div>
-        </p>
-    </center>
-
-    <script>
-        function converter() {
-            var decimal = Number(demo1.value);
-
-            demo2.innerHTML = decimal.toString(8);
-            demo3.innerHTML = decimal.toString(16);
-            demo4.innerHTML = decimal.toString(2);
-        }
-    </script>
+    <div id="div_rodape">
+        <h3>O CAMINHO DA LUZ É O BASQUETE</h3>
+        <h1 id="nba">NBA</h1>
+    </div>
 </body>
 
 </html>
+
+
+<script>
+    // function converter() {
+    //     var decimal = Number(demo1.value);
+
+    //     demo2.innerHTML = decimal.toString(8);
+    //     demo3.innerHTML = decimal.toString(16);
+    //     demo4.innerHTML = decimal.toString(2);
+    // }
+</script>
