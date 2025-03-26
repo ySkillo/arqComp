@@ -39,8 +39,7 @@
             <button id="btn_sessao1" onclick="decimalSessao()"></button>
             <button id="btn_sessao2" onclick="hexadecimalSessao()"></button>
             <button id="btn_sessao3" onclick="octalSessao()"></button>
-            <button id="btn_sessao4"></button>
-            <button id="btn_sessao5"></button>
+            <button id="btn_sessao4" onclick="binarioSessao()"></button>
         </div>
 
     </div>
@@ -91,6 +90,14 @@
          demo2.innerHTML = decimal.toString(8);
          demo3.innerHTML = decimal;
          demo4.innerHTML = decimal.toString(2);
+     }
+     function converterBinario() {
+         var binario = demo1.value;
+         var decimal = parseInt(binario, 2);
+
+         demo2.innerHTML = decimal.toString(8);
+         demo3.innerHTML = decimal;
+         demo4.innerHTML = decimal.toString(16);
      }
 
      function decimalSessao(){
@@ -196,5 +203,44 @@
 
 
      }
+     function binarioSessao(){
+        //reset outros btn
+        btn_sessao2.style.backgroundImage = 'url("01.png")';
+        btn_sessao2.style.backgroundColor = "transparent";
+        btn_sessao1.style.backgroundImage = 'url("01.png")';
+        btn_sessao1.style.backgroundColor = "transparent";
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoC;
+        just_do_it.style.color = letraC;
+        btn_sessao3.style.backgroundImage = 'url("05.png")';
+        btn_sessao3.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterOctal()">></button>`
+
+        h1_titulo.innerHTML = "Binario"
+        btn_enviar.style.backgroundColor = "#FF0000"
+        btn_enviar.style.borderColor = "#fff"
+        btn_enviar.style.color = "#fff"
+
+        demo1.style.background = "#fff"
+        demo2.style.background = "#fff"
+        demo3.style.background = "#fff"
+        demo4.style.background = "#fff"
+
+        demo1.style.color = "#000"
+        demo2.style.color = "#000"
+        demo3.style.color = "#000"
+        demo4.style.color = "#000"
+
+        div_img.innerHTML = `<img src="kobe.png" alt="">`
+
+
+
+
+
+
+
+}
 
 </script>
