@@ -17,16 +17,16 @@
         <div id="div_inputs">
             <span><h1 id="h1_titulo">DECIMAL</h1><img src="01.png" alt=""></span>
             <div id="div_inputs_box">
-                <label for="demo1">Digite um número decimal</label>
+                <label for="demo1" id="textoCima">Digite um número decimal</label>
                 <div id="button_check">
                     <input type="number" id="demo1">
                     <button id="btn_enviar" onclick="converterDecimal()">></button>
                 </div>
-                <label for="demo2">Octal</label>
+                <label for="demo2" id="texto1">Octal</label>
                 <div type="text" id="demo2" class="input"></div>
-                <label for="demo3">Hexadecimal</label>
+                <label for="demo3" id="texto2">Hexadecimal</label>
                 <div type="text" id="demo3" class="input"></div>
-                <label for="demo4">Binário</label>
+                <label for="demo4" id="texto3">Binário</label>
                 <div type="text" id="demo4" class="input"></div>
             </div>
         </div>
@@ -59,11 +59,13 @@
     var fundoA = "#111111";
     var fundoB = "#0059FF";
     var fundoC = "#FF0000";
+    var fundoD ="#8B008B";
 
     //letra fundo
     var letraA = "#131313"
     var letraB = "#2839F4"
     var letraC = "#FF1818"
+    var letraD = "#990099";
 
      function converterDecimal() {
          var decimal = Number(demo1.value);
@@ -78,6 +80,7 @@
          var decimal = Number(demo1.value);
          var octal = demo1.value;
          var decimal = parseInt(octal, 8);
+         
          demo2.innerHTML = decimal;
          demo3.innerHTML = decimal.toString(16);
          demo4.innerHTML = decimal.toString(2);
@@ -101,11 +104,20 @@
      }
 
      function decimalSessao(){
+
+        
+        textoCima.innerHTML="Digite um número decimal"
+        texto1.innerHTML="Octal"
+        texto2.innerHTML="Hexadecimal"
+        texto3.innerHTML="Binário"
+
         //reset outros btn
         btn_sessao2.style.backgroundImage = 'url("01.png")';
         btn_sessao2.style.backgroundColor = "transparent";
         btn_sessao3.style.backgroundImage = 'url("01.png")';
         btn_sessao3.style.backgroundColor = "transparent";
+        btn_sessao4.style.backgroundImage = 'url("01.png")';
+        btn_sessao4.style.backgroundColor = "transparent";
 
         body_color.style.background = fundoA;
         just_do_it.style.color = letraA;
@@ -134,11 +146,18 @@
 
      function hexadecimalSessao(){
 
+        textoCima.innerHTML="Digite um número Hexadecimal"
+        texto1.innerHTML="Octal"
+        texto2.innerHTML="Decimal"
+        texto3.innerHTML="Binário"
+
         //reset outros btn
         btn_sessao1.style.backgroundImage = 'url("01.png")';
         btn_sessao1.style.backgroundColor = "transparent";
         btn_sessao3.style.backgroundImage = 'url("01.png")';
         btn_sessao3.style.backgroundColor = "transparent";
+        btn_sessao4.style.backgroundImage = 'url("01.png")';
+        btn_sessao4.style.backgroundColor = "transparent";
 
         body_color.style.background = fundoB;
         just_do_it.style.color = letraB;
@@ -167,11 +186,18 @@
 
      function octalSessao(){
 
+        textoCima.innerHTML="Digite um número Octal"
+        texto1.innerHTML="Decimal"
+        texto2.innerHTML="Hexadecimal"
+        texto3.innerHTML="Binário"
+
         //reset outros btn
         btn_sessao2.style.backgroundImage = 'url("01.png")';
         btn_sessao2.style.backgroundColor = "transparent";
         btn_sessao1.style.backgroundImage = 'url("01.png")';
         btn_sessao1.style.backgroundColor = "transparent";
+        btn_sessao4.style.backgroundImage = 'url("01.png")';
+        btn_sessao4.style.backgroundColor = "transparent";
 
         body_color.style.background = fundoC;
         just_do_it.style.color = letraC;
@@ -204,23 +230,30 @@
 
      }
      function binarioSessao(){
+
+        textoCima.innerHTML="Digite um número binário"
+        texto1.innerHTML="Octal"
+        texto2.innerHTML="Decimal"
+        texto3.innerHTML="Hexadecimal"
+
         //reset outros btn
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
         btn_sessao2.style.backgroundImage = 'url("01.png")';
         btn_sessao2.style.backgroundColor = "transparent";
         btn_sessao1.style.backgroundImage = 'url("01.png")';
         btn_sessao1.style.backgroundColor = "transparent";
-        btn_sessao3.style.backgroundImage = 'url("01.png")';
-        btn_sessao3.style.backgroundColor = "transparent";
 
-        body_color.style.background = fundoC;
-        just_do_it.style.color = letraC;
-        btn_sessao3.style.backgroundImage = 'url("05.png")';
-        btn_sessao3.style.backgroundColor = "#fff";
-        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterOctal()">></button>`
+
+        body_color.style.background = fundoD;
+        just_do_it.style.color = letraD;
+        btn_sessao4.style.backgroundImage = 'url("02.png")';
+        btn_sessao4.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterBinario()">></button>`
 
         h1_titulo.innerHTML = "Binario"
-        btn_enviar.style.backgroundColor = "#FF0000"
-        btn_enviar.style.borderColor = "#fff"
+        btn_enviar.style.backgroundColor = "purple"
+        btn_enviar.style.borderColor = "#fff"   
         btn_enviar.style.color = "#fff"
 
         demo1.style.background = "#fff"
